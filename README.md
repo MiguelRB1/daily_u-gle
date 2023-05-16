@@ -91,7 +91,14 @@ company contact # here if applicable
 GitHub:https://github.com/MiguelRB1/daily_u-gle
 
 GitHub: https://github.com/ReidRym
-other git hubs here
+
+GitHub: https://github.com/MiguelRB1
+
+GitHub: https://github.com/Mosaleh-Egy
+
+GitHub: https://github.com/leig1974
+
+
 
 
 ## Email
