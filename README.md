@@ -55,8 +55,11 @@ The Daily U-Gle also includes a daily reminder to journal, so you never forget. 
 
 ## Credits
 Mohamed Saleh 
+
 Miguel Reyes Baez
+
 Leyla C
+
 Ryan Reid
 
 
