@@ -3,7 +3,9 @@ const app = express()
 const port = 3001
 const path = require('path')
 const session = require('express-session')
-const user = {userName:"abc@gmail.com",password:"123"}
+const User = require('./user')
+const sequelize = require("./database/connection")
+const bcrypt = require("bcrypt")
 app.use(express.json())
 // app.use(express.static('public'))
 app.set('trust proxy', 1) // trust first proxy
@@ -29,29 +31,38 @@ app.get('/', function (req, res) {
     'Password: <input name="pass" type="password"><br>' +
     '<input type="submit" text="Login"></form>')
 })
-app.post('/login', express.urlencoded({ extended: false }), function (req, res) {
+app.post('/login', express.urlencoded({ extended: false }),async function (req, res) {
   // login logic to validate req.body.user and req.body.pass
   // would be implemented here. for this example any combo works
   console.log(req.body.user)
-if(req.body.user===user.userName && req.body.pass===user.password){
-  // regenerate the session, which is good practice to help
-  // guard against forms of session fixation
-  req.session.regenerate(function (err) {
-    if (err) next(err)
-
-    // store user information in session, typically a user id
-    req.session.user = req.body.user
-
-    // save the session before redirection to ensure page
-    // load does not happen before session is saved
-    req.session.save(function (err) {
-      if (err) return next(err)
-      res.redirect('/')
+  const hashPassword = await bcrypt.hash(req.body.pass, 10);
+  const user = await User.findOne({ where: { email: req.body.user, password: hashPassword } });
+if (user === null) {
+  console.log('Not found!');
+} else {
+  console.log(user instanceof User); // true
+  if(user instanceof User){
+    // regenerate the session, which is good practice to help
+    // guard against forms of session fixation
+    req.session.regenerate(function (err) {
+      if (err) next(err)
+  
+      // store user information in session, typically a user id
+      req.session.user = req.body.user
+  
+      // save the session before redirection to ensure page
+      // load does not happen before session is saved
+      req.session.save(function (err) {
+        if (err) return next(err)
+        res.redirect('/')
+      })
     })
-  })
-} else{
-  res.send("invalid login info")
+  } else{
+    res.send("invalid login info")
+  }
+ 
 }
+
 
 })
 
