@@ -71,6 +71,11 @@ MIT
 ## Features  
 ADD Video link and Images here
 
+Image #1
+
+![image (8)](https://github.com/MiguelRB1/daily_u-gle/assets/123789106/bdb7b5b6-554d-41d9-8cc2-3fc4a8cfd62d)
+
+
 ## Contributing
 links for developers here
 
