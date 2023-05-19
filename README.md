@@ -55,8 +55,11 @@ The Daily U-Gle also includes a daily reminder to journal, so you never forget. 
 
 ## Credits
 Mohamed Saleh 
+
 Miguel Reyes Baez
+
 Leyla C
+
 Ryan Reid
 
 
@@ -85,8 +88,17 @@ company contact # here if applicable
 
 
 ## GitHub
+GitHub:https://github.com/MiguelRB1/daily_u-gle
+
 GitHub: https://github.com/ReidRym
-other git hubs here
+
+GitHub: https://github.com/MiguelRB1
+
+GitHub: https://github.com/Mosaleh-Egy
+
+GitHub: https://github.com/leig1974
+
+
 
 
 ## Email
