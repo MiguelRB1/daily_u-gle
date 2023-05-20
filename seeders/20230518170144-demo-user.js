@@ -1,31 +1,46 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
+const User = require('../user');
+const userData = require('./userData.json');
+const sequelize = require('../database/connection');
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert("User", [
-      {
-        name: "Sal",
-        email: "sal@hotmail.com",
-        password: "$2a$10$YjMFKEh1PDtTos8mrF8wiOrc0xknagSrPtyEERu2V1Vk1U7beYYBm"
-
-      },
-      {
-        name: "Lernantino",
-        email: "lernantino@gmail.com",
-        password: "$2a$10$sBzLKi6kTyUX4qz5IvWIMeQ8KZv4EACrT0akc.ySOisIq/m.c1A9K"
-
-      },
-      {
-        name: "Amiko",
-        email: "amiko2k20@aol.com",
-        password: "$2a$10$mLUBILzyT08zvw12uCwm7u9Fz8pQj9HRJVNof7rrrTW8erC9jAWJK"
-        
-      }
-    ]
-    );
+    sequelize.sync({ force: true });
+    return User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('User', null, {});
   }
 };
+
+
+// const sequelize = require('../database/connection');
+// const User = require('../user');
+
+// const userData = require('./userData.json');
+// // const projectData = require('./projectData.json');
+
+// const seedDatabase = async () => {
+  // await sequelize.sync({ force: true });
+
+//   const users = await User.bulkCreate(userData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
+
+//   // for (const project of projectData) {
+//   //   await Project.create({
+//   //     ...project,
+//   //     user_id: users[Math.floor(Math.random() * users.length)].id,
+//   //   });
+//   // }
+
+//   process.exit(0);
+// };
+
+// seedDatabase();
+
