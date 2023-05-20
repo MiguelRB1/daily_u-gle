@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');class User extends Model {
+const sequelize = require('../database/connection');class User extends Model {
  checkPassword(loginPw) {
   return bcrypt.compareSync(loginPw, this.password);
  }
@@ -33,7 +33,7 @@ User.init(
       },
      },
     },
-    ,
+    
     {
      hooks: {
       // set up beforeCreate lifecycle "hook" functionality

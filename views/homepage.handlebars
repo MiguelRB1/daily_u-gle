@@ -1,0 +1,10 @@
+{{#each journals as |journal| }}
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <h2>{{journal.emoji}} {{journal.title}}</h2>
+  </div>
+  <div class="col-md-6">
+    <h3><a href="/{{journal.id}}">Details</a></h3>
+  </div>
+</div>
+{{/each}}

@@ -1,12 +1,12 @@
 const User = require("./user")
 const Journal = require("./journal")
 
-User.hasMany(Journal,{
-  forgeinKey: "user_id"
 
-})
+User.hasMany(Journal,{
+  foreignKey: "user_id"
+});
 Journal.belongsTo(User,
-  {forgeinKey: ("user_id")})
+  {foreignKey: ("user_id")})
 // 'use strict';
  module.expert={User,Journal}
 // const fs = require('fs');
