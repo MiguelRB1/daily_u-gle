@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Journal = require('../../models');
+const {Journal} = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -32,24 +32,5 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.get('/', async (req, res) => {
-    try {
-      const journalData = await Journal.findAll({
-        // where: {
-        //   user_id: req.session.user_id,
-        // },
-      });
-  
-      if (!journalData) {
-        res.status(404).json({ message: 'No journal found with this id!' });
-        return;
-      }
-  
-      res.status(200).json(journalData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
 
 module.exports = router;

@@ -9,11 +9,11 @@ const sequelize = require("./database/connection")
 const bcrypt = require("bcrypt")
 const listEndpoints = require('express-list-endpoints');
 const exphbs = require('express-handlebars');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const helpers = require('./utils/helpers');
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const helpers = require('./utils/helpers');
 
 
-
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
  app.use(express.static('public'))
 app.set('trust proxy', 1) // trust first proxy
@@ -22,63 +22,32 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-const hbs = exphbs.create({ helpers });
+// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create();
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(routes);
 // middleware to test if authenticated
-function isAuthenticated (req, res, next) {
-  if (req.session.user) next()
-  else next('route')
-}
-app.get('/', isAuthenticated, function (req, res) {
-  // this is only called when there is an authentication user due to isAuthenticated
-   res.sendFile(path.join(__dirname,'./public/index.html'))
-})
+// function isAuthenticated (req, res, next) {
+//   if (req.session.user) next()
+//   else next('route')
+// }
+// app.get('/', isAuthenticated, function (req, res) {
+//   // this is only called when there is an authentication user due to isAuthenticated
+//    res.sendFile(path.join(__dirname,'./public/index.html'))
+// })
 
-app.get('/', function (req, res) {
-  res.send('<form action="/login" method="post">' +
-    'Username: <input name="user"><br>' +
-    'Password: <input name="pass" type="password"><br>' +
-    '<input type="submit" text="Login"></form>')
-})
-app.post('/login', express.urlencoded({ extended: false }),async function (req, res) {
-  // login logic to validate req.body.user and req.body.pass
-  // would be implemented here. for this example any combo works
-  console.log(req.body.user)
-  const hashPassword = await bcrypt.hash(req.body.pass, 10);
-  const user = await User.findOne({ where: { email: req.body.user } });
-if (user === null) {
-  console.log('Not found!');
-} else {
-  console.log(user instanceof User); // true
-  const isPasswordCorrect=await user.checkPassword(req.body.pass)
-  if(user instanceof User && isPasswordCorrect ){
-    // regenerate the session, which is good practice to help
-    // guard against forms of session fixation
-    req.session.regenerate(function (err) {
-      if (err) next(err)
-  
-      // store user information in session, typically a user id
-      req.session.user = req.body.user
-  
-      // save the session before redirection to ensure page
-      // load does not happen before session is saved
-      req.session.save(function (err) {
-        if (err) return next(err)
-        res.redirect('/')
-      })
-    })
-  } else{
-    res.send("invalid login info")
-  }
- 
-}
+// app.get('/', function (req, res) {
+//   // res.send('<form action="/login" method="post">' +
+//   //   'Username: <input name="user"><br>' +
+//   //   'Password: <input name="pass" type="password"><br>' +
+//   //   '<input type="submit" text="Login"></form>')
+//   res.sendFile(path.join(__dirname,'./public/login.html'))
+// })
 
 
-})
 
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname,'./public/index.html'))
@@ -90,6 +59,6 @@ if (user === null) {
 
   console.log(listEndpoints(app));
   
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
 })

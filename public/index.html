@@ -105,12 +105,13 @@
           </div>
         </div>
       </div>
+      <form action="/api/journals" method="post">
       <div class="col-md-8 h-100">
         <!-- <div class="col-md-8 h-100 style="background-color: yellow;">-->
         <div class="row" style="height: 70px;">
           <div class="col-md-4">
             <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy" style="font-size: 30px;">
-              <input class="form-control" type="text" readmeonly style="height: 50px; border-radius: 10px; font-size: 30px;">
+              <input name="date_created" class="form-control" type="text" readmeonly style="height: 50px; border-radius: 10px; font-size: 30px;">
               <span class="input-group-addon">
                 <i class="glythicom glythicom-calendar"></i>
               </span>
@@ -134,12 +135,13 @@
         <div class="row my-4">
           <div class="col-10" style="height: 60px;">
             <div class="input-group h-100">
-              <input type="text" class="form-control h-100" placeholder="Todays Journal Heading"
+              <input name="title" type="text" class="form-control h-100" placeholder="Todays Journal Heading"
                 arial-label="Input Field" style="font-size: 30px;">
               <!-- style="font-size: 30px;" -->
             </div>
           </div>
-        </div>          <select id="emoji-select" style="font-size: 35px;">
+        </div>    
+              <select name="emoji" id="emoji-select" style="font-size: 35px;">
             <option value="">Select an emoji</option>
             <option value="&#128512;">&#128512;</option>
             <option value="&#128526;">&#128526;</option>
@@ -164,15 +166,16 @@
           </script>
           <div class="row" style="height: 400px;">
             <div class="col-10">
-              <textarea class="form-control h-100 w-100" style="resize: none;"></textarea>
+              <textarea name="description" class="form-control h-100 w-100" style="resize: none;"></textarea>
             </div>
           </div>
           <div class="row my-2 d-flex justify-content-center">
             <div class="col-md-3">
-              <button class="btn btn-primary py-2 px-5" style="font-size: 30px;">Save Journal</button>
+              <button type="submit" class="btn btn-primary py-2 px-5" style="font-size: 30px;">Save Journal</button>
             </div>
           </div>
         </div>
+        </form>
       </div>
     </div>
     </div>

@@ -8,7 +8,7 @@ User.hasMany(Journal,{
 Journal.belongsTo(User,
   {foreignKey: ("user_id")})
 // 'use strict';
- module.expert={User,Journal}
+ module.exports={User,Journal}
 // const fs = require('fs');
 // const path = require('path');
 // const Sequelize = require('sequelize');
