@@ -4,6 +4,7 @@ const port = 3001
 const path = require('path')
 const session = require('express-session')
 const User = require('./user')
+const routes = require('./controller');
 const sequelize = require("./database/connection")
 const bcrypt = require("bcrypt")
 app.use(express.json())
@@ -14,7 +15,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-
+app.use(routes);
 // middleware to test if authenticated
 function isAuthenticated (req, res, next) {
   if (req.session.user) next()
@@ -36,12 +37,13 @@ app.post('/login', express.urlencoded({ extended: false }),async function (req, 
   // would be implemented here. for this example any combo works
   console.log(req.body.user)
   const hashPassword = await bcrypt.hash(req.body.pass, 10);
-  const user = await User.findOne({ where: { email: req.body.user, password: hashPassword } });
+  const user = await User.findOne({ where: { email: req.body.user } });
 if (user === null) {
   console.log('Not found!');
 } else {
   console.log(user instanceof User); // true
-  if(user instanceof User){
+  const isPasswordCorrect=await user.checkPassword(req.body.pass)
+  if(user instanceof User && isPasswordCorrect ){
     // regenerate the session, which is good practice to help
     // guard against forms of session fixation
     req.session.regenerate(function (err) {
