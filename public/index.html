@@ -128,7 +128,7 @@
 
 
       <div class="col-md-8 h-100">
-        <form action="/api/journals" method="post">
+        <form id="new-journal">
           <!-- <div class="col-md-8 h-100 style="background-color: yellow;">-->
           <div class="row" style="height: 70px;">
             <div class="col-md-4">
@@ -158,7 +158,7 @@
           <div class="row my-4 d-flex justify-content-center">
             <div class="col-10" style="height: 60px;">
               <div class="input-group h-100">
-                <input name="title" type="text" class="form-control h-100" placeholder="Todays Journal Heading"
+                <input id="jTitle" name="title" type="text" class="form-control h-100" placeholder="Todays Journal Heading"
                   arial-label="Input Field" style="font-size: 30px;">
                 <!-- style="font-size: 30px;" -->
               </div>
@@ -189,7 +189,7 @@
           </script>
           <div class="row" style="height: 400px;">
             <div class="col-10">
-              <textarea name="description" class="form-control h-100 w-100" style="resize: none;"></textarea>
+              <textarea id="description" name="description" class="form-control h-100 w-100" style="resize: none;"></textarea>
             </div>
           </div>
           <div class="row my-2 d-flex justify-content-center">
@@ -258,6 +258,9 @@
     function changeBgColor(color) {
       document.body.style.backgroundColor = color;
     }    </script>
+    <script src="./js/new.js">
+      
+    </script>
 </body>
 
 </html>
