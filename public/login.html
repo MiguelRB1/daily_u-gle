@@ -21,15 +21,15 @@
         <div class="row">
             <div class="col-md-6 bg-secondary p-3">
                 <h3 class="text-left mx-2 my-4" style="font-size: 40px;">Sign In</h3>
-                <form action="/login" method="post">
+                <form id="login-form" >
                     <div class="form-group">
                         <label for="email" style="font-size: 30px;">Email</label>
-                        <input name="user" type="email" class="form-control my-2" style="font-size: 30px;"
+                        <input id="email-login" name="user" type="email" class="form-control my-2" style="font-size: 30px;"
                             placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="password" style="font-size: 30px;">Password</label>
-                        <input name="pass" type="password" class="form-control my-2" style="font-size: 30px;"
+                        <input id="password-login" name="pass" type="password" class="form-control my-2" style="font-size: 30px;"
                             placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary px-5 py-2 my-2" style="font-size: 30px;">Sign
@@ -53,18 +53,8 @@
             </div>
 
 
-            <script>
-                // function signIn(event) {
-                //     event.preventDefault();
-                //     // Prevent the default from submission behavior
-                //     // Get the from data
-                //     const email = document.querySelector('input[name="user"]').value;
-                //     const password = document.querySelector('input[name="pass"]').value;
-                //     // to perform sign in logic here
-                //     // to use javascript to send data to a server or authenticate the user
-                //     console.log("Email:", email);
-                //     console.log("Password:", password);
-                // }
+            <script src="/js/login.js">
+    
             </script>
 
 <script>

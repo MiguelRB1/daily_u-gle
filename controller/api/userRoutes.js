@@ -4,14 +4,14 @@ const {User} = require('../../models');
  router.post('/login',async function (req, res) {
       // login logic to validate req.body.user and req.body.pass
       // would be implemented here. for this example any combo works
-      console.log(req.body.user)
-      const hashPassword = await bcrypt.hash(req.body.pass, 10);
-      const user = await User.findOne({ where: { email: req.body.user } });
+      console.log(req.body.email)
+    
+      const user = await User.findOne({ where: { email: req.body.email } });
     if (user === null) {
       console.log('Not found!');
     } else {
       console.log(user instanceof User); // true
-      const isPasswordCorrect=await user.checkPassword(req.body.pass)
+      const isPasswordCorrect=await user.checkPassword(req.body.password)
       if(user instanceof User && isPasswordCorrect ){
         // regenerate the session, which is good practice to help
         // guard against forms of session fixation
@@ -19,7 +19,7 @@ const {User} = require('../../models');
           if (err) next(err)
       
           // store user information in session, typically a user id
-          req.session.user = req.body.user
+          req.session.user = user
       
           // save the session before redirection to ensure page
           // load does not happen before session is saved

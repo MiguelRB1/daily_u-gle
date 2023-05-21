@@ -30,23 +30,21 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 // middleware to test if authenticated
-// function isAuthenticated (req, res, next) {
-//   if (req.session.user) next()
-//   else next('route')
-// }
-// app.get('/', isAuthenticated, function (req, res) {
-//   // this is only called when there is an authentication user due to isAuthenticated
-//    res.sendFile(path.join(__dirname,'./public/index.html'))
-// })
+function isAuthenticated (req, res, next) {
+  if (req.session.user) next()
+  else next('route')
+}
+app.get('/', isAuthenticated, function (req, res) {
+  // this is only called when there is an authentication user due to isAuthenticated
+   res.sendFile(path.join(__dirname,'./public/index.html'))
+})
 
-// app.get('/', function (req, res) {
-//   // res.send('<form action="/login" method="post">' +
-//   //   'Username: <input name="user"><br>' +
-//   //   'Password: <input name="pass" type="password"><br>' +
-//   //   '<input type="submit" text="Login"></form>')
-//   res.sendFile(path.join(__dirname,'./public/login.html'))
-// })
-
+app.get('/', function (req, res) {
+  res.redirect('/login')
+})
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname,'./public/login.html'))
+})
 
 
 // app.get('/', (req, res) => {
