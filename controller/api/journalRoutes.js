@@ -3,6 +3,8 @@ const {Journal} = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
+    // let journal= req.body;
+    // journal.date_created=new Date(journal.date_created)
     const newJournal = await Journal.create({
       ...req.body,
       user_id: req.session.user_id,
