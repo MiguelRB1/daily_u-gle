@@ -1,8 +1,13 @@
+
+
 html,
 body {
   height: 100%;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
+}
+
+.container-fluid{
 }
 
 .save-note {
@@ -76,3 +81,15 @@ body {
   padding: 20px;
   cursor: pointer;
 }
+
+.loginBG{
+  /* background-color: red; */
+  background-image: url(./background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.customTxtColor{
+  color: rgb(50, 103, 172);
+}
+

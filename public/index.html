@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,32 +15,48 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css">
 </head>
-<body class="border border-dark" style="background-color: rgb(153, 162, 173); height: 100vh;">
-  <div class="container-fluid" style="border-radius: 10px; border-width: 50px;">
+
+<body class="" style="background-color: rgb(153, 162, 173); height: 100vh;">
+  <!-- <body class="border border-dark">
+    <div class="has-bg-img">
+<img class="bg-img" src="./css/background.jpg" alt="img1">
+</div> -->
+  <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light"
       style="height: 200px; background-color: rgb(50, 50, 88); border-radius: 10px;">
       <a class="navbar-brand" href="#">
         <!-- <img src="./css/1moreimage_360.png" alt="img" /> -->
-      logoHere</a>
-      <h1 class="text-center my-4" style="font-size: 55px; color: white;">THE DAILY U-GLE</h1>
+        <!-- <a>logoHere</a> -->
+        <a class="logo" href="#"><img src="./css/1moreimage_360.png" alt="img" />
+
+          <div class="collapse navbar-collapse headingText d-flex justify-content-center"
+            id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand" href="#">
+              <h1 class="text-center my-8 heading" style="font-size: 55px; color: white;">THE DAILY U-GLE</h1>
+            </a>
+          </div>
     </nav>
     <h1 class="text-center my-4" style="color: rgb(50, 50, 88);">Current Entry</h1>
+
     <div class="row">
       <div class="col-md-4 h-100">
-        <h4 class="text-left mx-2 my-4" style="font-size: 35px; color: rgb(50, 50, 88)" ;>Previous Journals</h4>
+        <h4 class="text-left mx-2 my-4" style="font-size: 35px; color: rgb(50, 50, 88)">Previous Journals</h4>
         <div class="row m-2"
           style="height: 87px; border-radius: 10px; overflow: hidden; background-color: rgb(69, 69, 114);">
           <div class="col-1 d-flex align-items-center">
             <p style="font-size: 30px; color: white;">&#128514</p>
             <!-- <i class="fas fa-user"></i> -->
           </div>
+
           <div class="col-7 d-flex align-items-center" style="background-color:  rgb(69, 69, 114);">
             <h4 style="font-size: 30px; color: white;">Title, Description</h4>
           </div>
+
           <div class="col-4 d-flex align-items-center" style="background-color:  rgb(69, 69, 114);">
             <h4 style="font-size: 30px; color: white;">05-13-2023</h4>
           </div>
         </div>
+
         <div class="row m-2"
           style="height: 87px; border-radius: 10px; overflow: hidden; background-color:  rgb(69, 69, 114);">
           <div class="col-1 d-flex align-items-center">
@@ -105,43 +123,48 @@
           </div>
         </div>
       </div>
-      <form action="/api/journals" method="post">
+
+
+
+
       <div class="col-md-8 h-100">
-        <!-- <div class="col-md-8 h-100 style="background-color: yellow;">-->
-        <div class="row" style="height: 70px;">
-          <div class="col-md-4">
-            <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy" style="font-size: 30px;">
-              <input name="date_created" class="form-control" type="text" readmeonly style="height: 50px; border-radius: 10px; font-size: 30px;">
-              <span class="input-group-addon">
-                <i class="glythicom glythicom-calendar"></i>
-              </span>
+        <form action="/api/journals" method="post">
+          <!-- <div class="col-md-8 h-100 style="background-color: yellow;">-->
+          <div class="row" style="height: 70px;">
+            <div class="col-md-4">
+              <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy" style="font-size: 30px;">
+                <input name="date_created" class="form-control" type="text" readmeonly
+                  style="height: 50px; border-radius: 10px; font-size: 30px;">
+                <span class="input-group-addon">
+                  <i class="glythicom glythicom-calendar"></i>
+                </span>
+              </div>
+            </div>
+            <!-- color selectors -->
+            <div class="col-md-4"></div>
+            <div class="col-md-4 d-flex align-items-center" style="height: 50px;">
+              <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(248, 218, 224);"
+                onclick="changeBgColor('lightpink')"></div>
+              <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(196, 238, 196);"
+                onclick="changeBgColor('lightgreen')"></div>
+              <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(216, 212, 203);"
+                onclick="changeBgColor('lightgrey')"></div>
+              <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(181, 235, 245);"
+                onclick="changeBgColor('lightblue')"></div>
+              <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: orchid;"
+                onclick="changeBgColor('orchid')"></div>
             </div>
           </div>
-          <!-- color selectors -->
-          <div class="col-md-4"></div>
-          <div class="col-md-4 d-flex align-items-center" style="height: 50px;">
-            <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(248, 218, 224);"
-              onclick="changeBgColor('lightpink')"></div>
-            <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(196, 238, 196);"
-              onclick="changeBgColor('lightgreen')"></div>
-            <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(216, 212, 203);"
-              onclick="changeBgColor('lightgrey')"></div>
-            <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: rgb(181, 235, 245);"
-              onclick="changeBgColor('lightblue')"></div>
-            <div class="rounded-circle mx-2" style="width: 40px; height: 40px; background-color: orchid;"
-              onclick="changeBgColor('orchid')"></div>
-          </div>
-        </div>
-        <div class="row my-4">
-          <div class="col-10" style="height: 60px;">
-            <div class="input-group h-100">
-              <input name="title" type="text" class="form-control h-100" placeholder="Todays Journal Heading"
-                arial-label="Input Field" style="font-size: 30px;">
-              <!-- style="font-size: 30px;" -->
+          <div class="row my-4 d-flex justify-content-center">
+            <div class="col-10" style="height: 60px;">
+              <div class="input-group h-100">
+                <input name="title" type="text" class="form-control h-100" placeholder="Todays Journal Heading"
+                  arial-label="Input Field" style="font-size: 30px;">
+                <!-- style="font-size: 30px;" -->
+              </div>
             </div>
           </div>
-        </div>    
-              <select name="emoji" id="emoji-select" style="font-size: 35px;">
+          <select name="emoji" id="emoji-select" style="font-size: 35px;">
             <option value="">Select an emoji</option>
             <option value="&#128512;">&#128512;</option>
             <option value="&#128526;">&#128526;</option>
@@ -171,32 +194,72 @@
           </div>
           <div class="row my-2 d-flex justify-content-center">
             <div class="col-md-3">
-              <button type="submit" class="btn btn-primary py-2 px-5" style="font-size: 30px;">Save Journal</button>
+              <!-- <button type="submit" class="btn btn-primary py-2 px-5" style="font-size: 30px;">Save Journal</button> -->
+              <button type="submit" class="btn btn-primary py-2 px-5" style="font-size: 30px;"
+                onclick="saveJournal()">Save Journal</button>
+
+              <script>
+                function saveJournal() {
+                  console.log("Journal saved!");
+                }
+              </script>
             </div>
           </div>
-        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 bg-secondary">
+        <h3 class="text-left  my-4" style="font-size: 40px;">Log Out</h3>
+        <form id="logout-form" onsubmit="logout(event)">
+          <button type="submit" class="btn btn-primary px- py- my-" style="font-size: 30px;">Log Out</button>
         </form>
       </div>
     </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-      integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"
-      integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-      $(function () {
-        $("#datepicker").datepicker({
-          autoclose: true,
-          todayHighlight: true,
-        }).datepicker('update', new Date());
-      });
-      function changeBgColor(color) {
-        document.body.style.backgroundColor = color;
-      }    </script>
-  </body>
-  </html>
+  </div>
+
+  <script>
+    function logout(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      // Perform your log out logic here
+      // You can use JavaScript to send a request to the server to log the user out or clear any locally stored data
+      // For demonstration purposes, we'll log a message to the console
+      console.log("User logged out!");
+      window.location.reload();
+
+      // You can redirect the user or perform any other desired actions after logging out
+    }
+  </script>
+
+
+  </div>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+    integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"
+    integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+      }).datepicker('update', new Date());
+    });
+    function changeBgColor(color) {
+      document.body.style.backgroundColor = color;
+    }    </script>
+</body>
+
+</html>
+
+
