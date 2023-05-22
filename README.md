@@ -24,10 +24,6 @@ The Daily U-Gle is the perfect companion to help you stay on top of your emotion
 * [CREDITS](#credits)
 * [BADGES](#badges)
 * [FEATURES](#features)
-* [CONTRIBUTING](#contributing)
-* [TESTS](#tests)
-* [QUESTIONS](#questions)
-* [CONTACT](#contact)
 * [GITHUB](#github)
 * [EMAIL](#email)
 
