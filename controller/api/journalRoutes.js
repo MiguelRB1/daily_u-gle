@@ -21,7 +21,7 @@ router.delete('/:id', async (req, res) => {
     const journalData = await Journal.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        user_id: req.session.user.id,
       },
     });
 
@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
   try {
     const journalData = await Journal.findAll({
       where: {
-        user_id: req.session.user_id,
+        user_id: req.session.user.id,
       },
     });
 

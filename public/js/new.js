@@ -6,7 +6,7 @@
       method: 'POST',
       body: JSON.stringify({
        title: $('#jTitle').val(),
-       description: $('#description').text(),
+       description: $('#description').val(),
        emoji: $('#emoji-select :selected').val(),
 
     //    dateCreated: $('#datepicker').val(),
@@ -14,6 +14,7 @@
       headers: { 'Content-Type': 'application/json' },
      }).then((res)=>{
         console.log(res);
+        window.location.reload()
      })
    
      // document.location.replace('/dashboard');

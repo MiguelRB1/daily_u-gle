@@ -37,7 +37,7 @@ const {User} = require('../../models');
     }
     })
     router.post('/logout', (req, res) => {
-        if (req.session.logged_in) {
+        if (req.session.user) {
           req.session.destroy(() => {
             res.status(204).end();
           });

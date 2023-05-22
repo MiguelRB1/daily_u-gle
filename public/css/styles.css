@@ -93,3 +93,28 @@ body {
   color: rgb(50, 103, 172);
 }
 
+
+
+.customLogoutContainer{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6px;
+  border-radius: 12px;
+
+}
+
+.item-title{
+  color: aqua;
+}
+.item-description{
+  color: rgb(12 225 129);
+}
+
+.delete-icon{
+  font-size:50px ;
+  color: #d84855;
+  margin-left: 80px;
+}
