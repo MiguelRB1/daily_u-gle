@@ -1,3 +1,4 @@
+const { env } = require('process');
 const { Sequelize } = require('sequelize');
 
 // Option 1: Passing a connection URI
@@ -11,10 +12,9 @@ const { Sequelize } = require('sequelize');
 // });
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelize = new Sequelize('Dailyugle', 'root', 'password', {
-  host: 'localhost',
+const sequelize = new Sequelize('Dailyugle', {
+  host: env.DATABASE_URL,
   dialect: 'mysql', 
   dialectModule: require('mysql2'),
 });
-mysql://b27e812ca992f7:d9a46929@us-cdbr-east-06.cleardb.net/heroku_b981481c0181f9b?reconnect=true
 module.exports = sequelize;
