@@ -15,3 +15,9 @@
     $('#logout-link').on('click', logout);
    })(jQuery);
    
+
+   <p>
+{/* link to login page */}
+
+  <a href="login.html">login page</a>.
+</p>
