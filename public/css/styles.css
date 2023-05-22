@@ -105,3 +105,10 @@ body {
   border-radius: 12px;
 
 }
+
+.item-title{
+  color: aqua;
+}
+.item-description{
+  color: rgb(12 225 129);
+}
