@@ -69,7 +69,11 @@ MIT
 
 
 ## Features  
-ADD Video link and Images here
+Video Trailer link:
+
+https://drive.google.com/file/d/1mVfo07OHTFcZx40o0HalTNVxX2upI8R_/view
+
+
 
 Image #1
 
@@ -84,21 +88,6 @@ Image #3
 
 ![image (8)](https://github.com/MiguelRB1/daily_u-gle/assets/123789106/bdb7b5b6-554d-41d9-8cc2-3fc4a8cfd62d)
 
-
-## Contributing
-links for developers here
-
-
-## Tests  
-test instructions here
-
-
-## Questions
-questions here
-
-
-## Contact
-company contact # here if applicable
 
 
 ## GitHub
