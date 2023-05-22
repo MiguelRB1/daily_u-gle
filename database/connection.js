@@ -12,9 +12,5 @@ const { Sequelize } = require('sequelize');
 // });
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelize = new Sequelize('Dailyugle', {
-  host: env.DATABASE_URL,
-  dialect: 'mysql', 
-  dialectModule: require('mysql2'),
-});
+const sequelize = new Sequelize( `${env.DATABASE_URL}`);
 module.exports = sequelize;
