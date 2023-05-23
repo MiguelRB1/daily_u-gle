@@ -67,7 +67,7 @@ MIT
 ## Features  
 Video Trailer link:
 
-https://drive.google.com/file/d/1mVfo07OHTFcZx40o0HalTNVxX2upI8R_/view
+
 
 
 
