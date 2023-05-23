@@ -1,7 +1,7 @@
 # THE DAILY U-GLE
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
+..
 ## Description
 Welcome to Hugs for My Bugs and our new journal app, The Daily U-Gle! We understand that taking care of your mind is just as important as exercise is for your body and journaling is a great way to do that. That's why we've created The Daily U-Gle! 
 
