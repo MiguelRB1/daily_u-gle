@@ -42,5 +42,5 @@ Journal.init(
     modelName: 'journal',
   }
 );
-
+sequelize.sync({force: false});
 module.exports = Journal;
