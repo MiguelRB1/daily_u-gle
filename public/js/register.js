@@ -23,4 +23,3 @@ const registerFormHandler = async function (event) {
    document
     .querySelector('#register-form')
     .addEventListener('submit', registerFormHandler);
-   
