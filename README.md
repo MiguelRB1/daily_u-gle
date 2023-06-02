@@ -87,8 +87,8 @@ Image #3
 
 
 ## GitHub
-GitHub:https://thedailyugle.herokuapp.com/
 
+GitHub:https://journal-app.herokuapp.com/login
 
 GitHub:https://github.com/MiguelRB1/daily_u-gle
 
