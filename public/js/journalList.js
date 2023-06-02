@@ -38,6 +38,7 @@
     }
 
     const createJournalComponent = (journal)=>{
+        journal.emoji = decodeURI(journal.emoji)
         return `
         <div class="row m-2" style="height: 87px; border-radius: 10px; overflow: hidden; background-color: rgb(69, 69, 114); ">
     <div class="col-1 d-flex align-items-center">

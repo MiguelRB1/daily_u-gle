@@ -7,7 +7,7 @@
       body: JSON.stringify({
        title: $('#jTitle').val(),
        description: $('#description').val(),
-       emoji: $('#emoji-select :selected').val(),
+       emoji: encodeURI( $('#emoji-select :selected').val()),
 
     //    dateCreated: $('#datepicker').val(),
       }),
