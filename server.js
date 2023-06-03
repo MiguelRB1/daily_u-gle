@@ -32,7 +32,7 @@ app.use(routes);
 // middleware to test if authenticated
 function isAuthenticated (req, res, next) {
   if (req.session.user) next()
-  else next('route')
+  else next('/login')
 }
 app.get('/', isAuthenticated, function (req, res) {
   // this is only called when there is an authentication user due to isAuthenticated
